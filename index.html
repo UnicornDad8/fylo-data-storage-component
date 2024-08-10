@@ -62,20 +62,44 @@
       </div>
       <!-- Progress Bar -->
       <div
-        class="shadow-md shadow-[#0C122C] bg-[#1D2C67] w-full self-center md:self-end py-7 px-10 rounded-lg flex flex-0 md:flex-1 flex-col items-center justify-center"
+        class="relative shadow-md shadow-[#0C122C] bg-[#1D2C67] w-full self-center md:self-end py-7 px-10 rounded-lg flex flex-0 md:flex-1 flex-col items-center justify-center"
       >
-        <label for="file" class="mb-3 text-white font-thin opacity-80"
-          >You've used <span class="font-semibold">815 GB</span> of your
-          storage</label
-        >
-        <progress
-          class="w-full [&::-webkit-progress-bar]:rounded-lg [&::-webkit-progress-value]:rounded-lg [&::-webkit-progress-bar]:bg-[#0C122C] [&::-webkit-progress-value]:bg-gradient-to-r from-[#FFA399] to-[#FF4D97] [&::-moz-progress-bar]:bg-gradient-to-r from-[#FFA399] to-[#FF4D97]"
-          id="file"
-          value="75"
-          max="100"
-        >
-          75%
-        </progress>
+        <!-- Tooltip -->
+        <div class="group cursor-pointer relative flex flex-col gap-1 w-full">
+          <label for="GB" class="mb-3 text-white font-thin opacity-80"
+            >You've used <span class="font-semibold">815 GB</span> of your
+            storage</label
+          >
+          <progress
+            class="w-full [&::-webkit-progress-bar]:rounded-lg [&::-webkit-progress-value]:rounded-lg [&::-webkit-progress-bar]:bg-[#0C122C] [&::-webkit-progress-value]:bg-gradient-to-r from-[#FFA399] to-[#FF4D97] [&::-moz-progress-bar]:bg-gradient-to-r from-[#FFA399] to-[#FF4D97]"
+            id="GB"
+            value="75"
+            max="100"
+          >
+            75%
+          </progress>
+
+          <div
+            class="opacity-0 w-40 py-3 px-5 bg-white absolute bottom-0 right-[50%] translate-x-[50%] md:translate-x-0 translate-y-[250%] md:translate-y-0 md:right-0 z-10 group-hover:opacity-100 bottom-full rounded-lg pointer-events-none"
+          >
+            <div class="flex items-center justify-center gap-2 w-full">
+              <h3 class="text-black text-3xl font-extrabold">185</h3>
+              <p class="text-black text-xs opacity-50 uppercase font-bold">
+                GB left
+              </p>
+            </div>
+            <svg
+              class="absolute text-black h-2 w-full left-0 top-full"
+              x="0px"
+              y="0px"
+              viewBox="0 0 255 255"
+              xml:space="preserve"
+            >
+              <polygon class="fill-current" points="0,0 127.5,127.5 255,0" />
+            </svg>
+          </div>
+        </div>
+
         <div class="w-full flex justify-between mt-1">
           <span class="text-white font-semibold opacity-80">0 GB</span>
           <span class="text-white font-semibold opacity-80">100 GB</span>
