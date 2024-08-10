@@ -19,13 +19,13 @@
     <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
   <body
-    class="h-screen w-screen p-4 bg-[#0C122C] bg-[url(images/bg-mobile.png)] md:bg-[url(images/bg-desktop.png)] bg-cntain bg-no-repeat bg-bottom"
+    class="h-screen w-screen py-0 px-4 bg-[#0C122C] bg-[url(images/bg-mobile.png)] md:bg-[url(images/bg-desktop.png)] bg-cover md:bg-contain bg-no-repeat bg-bottom"
   >
     <div
-      class="flex gap-5 h-full md:flex-row flex-col max-w-7xl m-auto items-center justify-center"
+      class="flex gap-5 h-full md:h-1/2 translate-y-0 md:translate-y-16 md:flex-row flex-col max-w-4xl m-auto items-center justify-center"
     >
       <div
-        class="shadow-md shadow-[#0C122C] bg-[#1D2C67] p-7 rounded-tl-lg rounded-b-lg rounded-tr-[92px] w-full md:w-80"
+        class="shadow-md shadow-[#0C122C] bg-[#1D2C67] self-center md:self-end py-7 px-10 rounded-tl-lg rounded-b-lg rounded-tr-[92px] w-full md:w-80"
       >
         <img src="./images/logo.svg" alt="Fylo Logo" class="mb-6" />
         <div class="flex gap-5">
@@ -60,7 +60,27 @@
           </div>
         </div>
       </div>
-      <div class="bg-green-200">world</div>
+      <!-- Progress Bar -->
+      <div
+        class="shadow-md shadow-[#0C122C] bg-[#1D2C67] w-full self-center md:self-end py-7 px-10 rounded-lg flex flex-0 md:flex-1 flex-col items-center justify-center"
+      >
+        <label for="file" class="mb-3 text-white font-thin opacity-80"
+          >You've used <span class="font-semibold">815 GB</span> of your
+          storage</label
+        >
+        <progress
+          class="w-full [&::-webkit-progress-bar]:rounded-lg [&::-webkit-progress-value]:rounded-lg [&::-webkit-progress-bar]:bg-[#0C122C] [&::-webkit-progress-value]:bg-gradient-to-r from-[#FFA399] to-[#FF4D97] [&::-moz-progress-bar]:bg-gradient-to-r from-[#FFA399] to-[#FF4D97]"
+          id="file"
+          value="75"
+          max="100"
+        >
+          75%
+        </progress>
+        <div class="w-full flex justify-between mt-1">
+          <span class="text-white font-semibold opacity-80">0 GB</span>
+          <span class="text-white font-semibold opacity-80">100 GB</span>
+        </div>
+      </div>
     </div>
   </body>
 </html>
